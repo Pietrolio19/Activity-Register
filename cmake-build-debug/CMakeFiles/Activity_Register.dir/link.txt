@@ -1,0 +1,1 @@
+/usr/bin/g++-11 -g CMakeFiles/Activity_Register.dir/main.cpp.o -o Activity_Register 

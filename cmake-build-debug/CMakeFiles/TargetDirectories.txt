@@ -1,0 +1,3 @@
+/home/pietrolio/Clion/C++/Activity_Register/cmake-build-debug/CMakeFiles/FirstC.dir
+/home/pietrolio/Clion/C++/Activity_Register/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/pietrolio/Clion/C++/Activity_Register/cmake-build-debug/CMakeFiles/rebuild_cache.dir
