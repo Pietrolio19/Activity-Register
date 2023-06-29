@@ -41,4 +41,10 @@ private:
     int getMaxDaysInMonth();
 };
 
+class DateComparator {
+public:
+    bool operator()(const Date& first, const Date& second) const;
+};
+
+
 #endif //ACTIVITY_REGISTER_DATE_H

@@ -33,3 +33,17 @@ std::ostream &operator<<(std::ostream &stream, const Date &date) {
     stream << date.getDay() << "/" << date.getMonth() << "/" << date.getYear();
     return stream;
 }
+
+bool DateComparator::operator()(const Date &first, const Date &second) const {
+    if (first.getYear() > second.getYear())
+        return false;
+    else if (first.getYear() == second.getYear()) {
+        if (first.getMonth() > second.getMonth())
+            return false;
+        else if (first.getMonth() == second.getMonth()) {
+            if (first.getDay()>= second.getDay())
+                return false;
+        }
+    }
+    return true;
+}

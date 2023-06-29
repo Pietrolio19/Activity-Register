@@ -1,10 +1,21 @@
 #include <iostream>
-#include "Date.h"
-#include "Time.h"
+#include <wx/wx.h>
+#include "Register.h"
 
 int main() {
-    Date d1(28, 2, 2003);
-    Time t1(43, 22);
-    std::cout << d1 << " " << t1 << std::endl;
-    std::cout << t1 << std::endl;
+    Date d1(26, 9, 2023);
+    Date d2(27, 9, 2023);
+    Time st(12, 13);
+    Time et(15, 18);
+    Task t1("Gym", st, et, d1);
+    Task t2("Refill Water Supplies", st, et, d2);
+    Register d1Register;
+    Register d2Register;
+    d1Register.addTask(t1);
+    d2Register.addTask(t2);
+    d1Register.printTasks();
+    d2Register.printTasks();
 }
+
+
+

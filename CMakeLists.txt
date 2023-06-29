@@ -8,7 +8,7 @@ set(wxWidgets_CONFIGURATION mswu)
 find_package(wxWidgets COMPONENTS core base REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCE_FILES main.cpp Task.h Date.h Date.cpp Time.h Time.cpp)
+set(SOURCE_FILES main.cpp Task.h Date.h Date.cpp Time.h Time.cpp Register.h Task.cpp Register.cpp)
 add_executable(FirstC ${SOURCE_FILES})
 
 target_link_libraries(FirstC ${wxWidgets_LIBRARIES})
