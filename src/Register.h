@@ -3,6 +3,7 @@
 #include "Activity.h"
 #include "Date.h"
 #include "Observer.h"
+#include <wx/wx.h>
 #include <map>
 #include <memory>
 #include <vector>
@@ -17,14 +18,18 @@ public:
 
     void printRegister(Date& date);
 
+    //metodi necessari per la GUI
+
+    vector<Date> getRegisteredDates();
+
+    vector<shared_ptr<Activity>>& getActivities(const Date& date);
+
     void update() override {
         notify();
     }
 
 private:
-    map<Date, vector<pair<int, shared_ptr<Activity>>>> activities; //ogni chiave (Date) è associata a una o più attività riconosciuta tramite un id intero
+    map<Date, vector<shared_ptr<Activity>>> activities; //ogni chiave (Date) è associata a una o più attività riconosciuta tramite un id intero
     //Lo shared_ptr viene utilizzato in modo che le modifiche fatte con i metodi di Activity siano viste anche dal Register
-    map<Date, int> activityCounter; //mappa che tiene conto degli id delle attività in base alla data, se non implementi la funzione di rimozione delle attività rimuovi gli id che complicano tutto
-    int nextActivityId = 0;
 };
 #endif //REGISTER_H

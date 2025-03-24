@@ -13,7 +13,11 @@ set(SOURCE_FILES Activity.cpp Activity.h Date.h Date.cpp
         Register.h
         Observer.h
         Subject.h
-        Subject.cpp)
+        Subject.cpp
+        App.h
+        App.cpp
+        Frame.h
+        Frame.cpp)
 add_executable(${PROJECT_NAME} main.cpp)
 add_library(core ${SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME} core ${wxWidgets_LIBRARIES})

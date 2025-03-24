@@ -12,6 +12,8 @@ public:
         this->desc = desc;
     }
 
+    string getActivity();
+
     void modifyDescription(string newDesc) {
         this->desc = newDesc;
         notify();

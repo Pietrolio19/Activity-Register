@@ -13,6 +13,8 @@ public:
 
     string getTime() const;
 
+    bool check() const;
+
 private:
     int minute;
     int hour;

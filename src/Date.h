@@ -14,13 +14,12 @@ public:
     int getDay() const {return day;}
     int getMonth() const {return month;}
     int getYear() const {return year;}
+    bool check() const;//controlla se la data è valida
     string toString() const;
 
 private:
-    int day;
-    int month;
-    int year;
+    int day, month, year;
 };
 
-bool operator<(const Date& lhs, const Date &rhs);
+bool operator<(const Date& lhs, const Date& rhs); //overload necessario per il corretto funzionamento della mappa di Register
 #endif //DATE_H
