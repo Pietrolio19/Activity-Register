@@ -11,9 +11,6 @@ set(SOURCE_FILES Activity.cpp Activity.h Date.h Date.cpp
         Time.cpp
         Register.cpp
         Register.h
-        Observer.h
-        Subject.h
-        Subject.cpp
         App.h
         App.cpp
         Frame.h

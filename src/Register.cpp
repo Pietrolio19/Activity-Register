@@ -1,7 +1,6 @@
 #include "Register.h"
 
 void Register::addActivity(Date &date, shared_ptr<Activity> newActivity) {
-    newActivity->subscribe(this);
     activities[date].emplace_back(newActivity);
     //notify(); per GUI dopo
 }
