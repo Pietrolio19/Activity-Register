@@ -2,7 +2,6 @@
 #define REGISTER_H
 #include "Activity.h"
 #include "Date.h"
-#include <wx/wx.h>
 #include <map>
 #include <memory>
 #include <vector>
