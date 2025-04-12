@@ -3,7 +3,9 @@ set(CMAKE_CXX_STANDARD 20)
 set(PROJECT_NAME ActivityTracker)
 project(${PROJECT_NAME})
 
-add_executable(run_tests Test_register.cpp)
+add_executable(run_tests Test_register.cpp
+        Date_tests.cpp
+        Time_tests.cpp)
 
 target_include_directories(run_tests PUBLIC ${PROJECT_SOURCE_DIR}/include)
 

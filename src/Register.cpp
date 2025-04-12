@@ -2,10 +2,8 @@
 
 void Register::addActivity(Date &date, shared_ptr<Activity> newActivity) {
     activities[date].emplace_back(newActivity);
-    //notify(); per GUI dopo
 }
 
-//ragionare su un eventuale funzione per rimuovere una attività
 
 void Register::printRegister(Date &date) {
     auto it = activities.find(date);
