@@ -29,8 +29,8 @@ TEST(DateTests, TestCheckFunction) {
 TEST(DateTests, TestToString) {
     Date date = Date(26,3,2025);
     Date date2 = Date(27,1,2023);
-    string expected = date.toString();
-    string expected2 = date2.toString();
+    string expected = "26/03/2025";
+    string expected2 = "27/01/2023";
     ASSERT_EQ(date.toString(), expected);
     ASSERT_EQ(date2.toString(), expected2);
 }

@@ -14,10 +14,12 @@ Frame::Frame(Register* main_register) : wxFrame(nullptr, wxID_ANY, "Activity Reg
     mainSizer->Add(buttonSizer, 0, wxEXPAND | wxALL, 5);
     mainSizer->Add(activityList, 1, wxEXPAND | wxALL, 5);
     vector<Date> registeredDates = reg->getRegisteredDates();
+
     for (auto& d : registeredDates) {
         wxString dateStr = d.toString(); //converto la data in una wxString in modo che sia gestibile da wx e sia inseribile in un bottone
         wxButton* button = new wxButton(panel, wxID_ANY, dateStr);
         buttonSizer->Add(button, 0, wxALL, 5);
+
         //utilizzando una funzione lambda associo al bottone la funzione che stampa le attività
         button->Bind(wxEVT_BUTTON, [this, d](wxCommandEvent& event) {
             activityList->Clear(); //in caso siano già presenti delle attività precedentemente stampate le rimuovo
@@ -29,6 +31,12 @@ Frame::Frame(Register* main_register) : wxFrame(nullptr, wxID_ANY, "Activity Reg
             }
         });//definizione dell'evento per il bottone
     }
+
+    //modifica alla grandezza del font di stampa delle attività per renderlo più leggibile
+    wxFont font = activityList->GetFont();
+    font.SetPointSize(20);
+    activityList->SetFont(font);
+
     mainSizer->Layout();
     Fit();
 }
