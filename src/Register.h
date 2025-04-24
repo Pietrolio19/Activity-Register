@@ -20,7 +20,9 @@ public:
 
     vector<Date> getRegisteredDates();
 
-    vector<shared_ptr<Activity>>& getActivities(const Date& date);
+    vector<shared_ptr<Activity>>& getActivities(const Date& date); //rinominare
+
+    //aggiunta, modifica e cancellazione
 
 private:
     map<Date, vector<shared_ptr<Activity>>> activities; //ogni chiave (Date) è associata a una o più attività

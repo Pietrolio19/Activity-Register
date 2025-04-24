@@ -9,7 +9,9 @@ bool Date::check() const{
 
     switch (month) { //controlla la validità del giorno inserito in base al mese
         case 2:
-            if (day > 28 && month == 2 && year % 4 != 0) //se l'anno non è bisestile allora non si può inserire il numero 29
+            if (day > 28 && year % 4 != 0) //se l'anno non è bisestile allora non si può inserire il numero 29
+                return false;
+            if (day > 29 && year % 4 == 0)
                 return false;
 
         case 4:

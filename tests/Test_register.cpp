@@ -10,8 +10,11 @@ TEST(RegisterTest, AddActivityTest) {
     auto time2 = Time(15, 15);
     auto act1 = std::make_shared<Activity>(text, time1, time2);
     reg.addActivity(date, act1);
+    //migliora test
 
     auto activities = reg.getActivities(date);
     ASSERT_EQ(activities.size(), 1);
     EXPECT_EQ(activities[0]->getActivity(), act1->getActivity());
 }
+
+//test su aggiunta, rimozione, ...

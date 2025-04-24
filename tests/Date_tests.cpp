@@ -15,15 +15,10 @@ TEST(DateTests, DateConstructor) {
     ASSERT_EQ(date2.getYear(), 2023);
 }
 
-TEST(DateTests, TestCheckFunction) {
-    Date date = Date(26,3,-12);
-    Date date2 = Date(30,2,2023);
-    Date date3 = Date(27,1,2023);
-    Date date4 = Date(30,3,2025);
-    ASSERT_EQ(date.check(), false);
-    ASSERT_EQ(date2.check(), false);
-    ASSERT_EQ(date3.check(), true);
-    ASSERT_EQ(date4.check(), true);
+TEST(DateTests, ExceptionTest) {
+    ASSERT_THROW([]{Date(26,3,-12);}(), invalid_argument); //funzione lambda necessaria altrimenti l'eccezione nel costruttore blocca il test
+    ASSERT_THROW([]{Date(30,2,2024);}(), invalid_argument);
+    ASSERT_THROW([]{Date(29,2,2025);}(), invalid_argument);
 }
 
 TEST(DateTests, TestToString) {

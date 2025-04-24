@@ -1,27 +1,13 @@
 #include "Time.h"
 
-Time::Time(int hour, int minute) {
-    try {
-        this->minute = minute;
-        this->hour = hour;
-        if (!check()) {
-            throw std::invalid_argument("Invalid Time");
-        }
-    }
-    catch (std::invalid_argument e) {
-        cout << "Invalid Time" << endl;
-    }
-}
-
-
-bool Time::check() const {
+bool Time::check() const { //privato
     if (minute < 0 || minute > 59 || hour < 0 || hour > 23)
         return false;
     return true;
 }
 
 
-string Time::getTime() const {
+string Time::toString() const {
     if (check()) {
         ostringstream oss;
         oss << (hour < 10 ? "0" : "") << hour << ":"
