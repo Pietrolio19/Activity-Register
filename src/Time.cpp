@@ -16,3 +16,14 @@ string Time::toString() const {
     }
     return "Orario non valido";
 }
+
+bool operator>(const Time &lhs, const Time &rhs) {
+    if (lhs.getHour() != rhs.getHour()) {
+        return lhs.getHour() > rhs.getHour();
+    }
+    else if(lhs.getMinute() != rhs.getMinute()) {
+        return lhs.getMinute() > rhs.getMinute();
+    }
+    else return false; //lhs == rhs
+}
+

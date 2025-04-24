@@ -18,10 +18,11 @@ public:
 
     string toString() const;
 
-    bool check() const;
-
 private:
     int minute;
     int hour;
+    [[nodiscard]] bool check() const;
 };
 #endif //TIME_H
+
+bool operator>(const Time& lhs, const Time& rhs);

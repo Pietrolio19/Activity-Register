@@ -9,20 +9,16 @@ class Activity {
 public:
     Activity(string desc, Time start, Time end) : start(start), end(end) {
         this->desc = desc;
-        //controllo
+        if (start > end) {
+            throw invalid_argument("Invalid Starting Time");
+        }
     }
 
-    string getActivity(); //rinominare
-
-    void printActivity(); //rimuovere
+    string toString();
 
 private:
     string desc;
     Time start;
     Time end;
 };
-
-
-
-
 #endif //ACTIVITY_H
