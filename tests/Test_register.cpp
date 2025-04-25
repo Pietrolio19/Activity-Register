@@ -16,7 +16,7 @@ TEST(RegisterTest, AddActivityTest) {
     EXPECT_EQ(activities[0]->toString(), act1->toString());
 }
 
-TEST(ResisterTest, removeActivityTest) {
+TEST(ResisterTest, removeActivityTest) { //aggiunta
     auto reg = Register();
     auto date = Date(26,4,2025);
     string text = "Testing!";
@@ -32,7 +32,7 @@ TEST(ResisterTest, removeActivityTest) {
     ASSERT_EQ(activities.size(), 1);
 }
 
-TEST(RegisterTest, updateActivityTest) {
+TEST(RegisterTest, updateActivityTest) { //aggiunta
     auto reg = Register();
     auto date = Date(26,4,2025);
     string text = "Testing!";

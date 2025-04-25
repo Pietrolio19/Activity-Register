@@ -12,7 +12,7 @@ TEST(TimeTests, TimeConstructor) {
     ASSERT_EQ(time2.getMinute(), 3);
 }
 
-TEST(TimeTests, ExcetionTest) {
+TEST(TimeTests, ExcetionTest) { //aggiunta
     ASSERT_THROW([]{Time(25,12);}(), invalid_argument);
     ASSERT_THROW([]{Time(20,61);}(), invalid_argument);
 }

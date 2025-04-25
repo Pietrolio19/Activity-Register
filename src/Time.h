@@ -9,19 +9,19 @@ public:
         this->minute = minute;
         this->hour = hour;
         if (!check()) {
-            throw std::invalid_argument("Invalid Time");
+            throw std::invalid_argument("Invalid Time"); //cambiato
         }
     }
 
     int getMinute() const {return minute;}
     int getHour() const {return hour;}
 
-    string toString() const;
+    string toString() const; //nome cambiato
 
 private:
     int minute;
     int hour;
-    [[nodiscard]] bool check() const;
+    [[nodiscard]] bool check() const; //funzione spostata
 };
 #endif //TIME_H
 

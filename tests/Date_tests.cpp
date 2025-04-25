@@ -15,7 +15,7 @@ TEST(DateTests, DateConstructor) {
     ASSERT_EQ(date2.getYear(), 2023);
 }
 
-TEST(DateTests, ExceptionTest) {
+TEST(DateTests, ExceptionTest) { //aggiunta
     ASSERT_THROW([]{Date(26,3,-12);}(), invalid_argument); //funzione lambda necessaria altrimenti l'eccezione nel costruttore blocca il test
     ASSERT_THROW([]{Date(30,2,2024);}(), invalid_argument);
     ASSERT_THROW([]{Date(29,2,2025);}(), invalid_argument);

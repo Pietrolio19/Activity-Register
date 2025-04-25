@@ -9,7 +9,7 @@ class Activity {
 public:
     Activity(string desc, Time start, Time end) : start(start), end(end) {
         this->desc = desc;
-        if (start > end) {
+        if (start > end) { //aggiunta
             throw invalid_argument("Invalid Starting Time");
         }
     }

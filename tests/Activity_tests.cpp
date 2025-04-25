@@ -18,7 +18,7 @@ TEST(ActivityTests, ActivityConstructor) {
     ASSERT_EQ(activity2.toString(), expected2);
 }
 
-TEST(ActivityTests, ExceptionTest) {
+TEST(ActivityTests, ExceptionTest) { //aggiunta
     //Attività 1
     ASSERT_THROW([] {
         string desc = "Corsa Mattutina";
