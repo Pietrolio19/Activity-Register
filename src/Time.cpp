@@ -1,6 +1,6 @@
 #include "Time.h"
 
-bool Time::check() const { //privato
+bool Time::check() const {
     if (minute < 0 || minute > 59 || hour < 0 || hour > 23)
         return false;
     return true;

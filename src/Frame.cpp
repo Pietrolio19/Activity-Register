@@ -24,9 +24,9 @@ Frame::Frame(Register* main_register) : wxFrame(nullptr, wxID_ANY, "Activity Reg
         button->Bind(wxEVT_BUTTON, [this, d](wxCommandEvent& event) {
             activityList->Clear(); //in caso siano già presenti delle attività precedentemente stampate le rimuovo
 
-            const auto& activities = reg->getActivities(d); //ottengo le attività legate alla data d ed eseguo un ciclo per aggiungerle ad activityList
+            const auto& activities = reg->searchActivityByDate(d); //ottengo le attività legate alla data d ed eseguo un ciclo per aggiungerle ad activityList
             for (auto& act : activities) {
-                wxString act_str = act->getActivity();
+                wxString act_str = act->toString();
                 activityList->Append(act_str);
             }
         });//definizione dell'evento per il bottone

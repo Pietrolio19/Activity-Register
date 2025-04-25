@@ -10,19 +10,21 @@ using namespace std;
 
 class Register {
 public:
-    //per ora costruttore non necessario la mappa "si inizializza da sola"
+    void printRegister(const Date& date);
 
-    void addActivity(Date& date, shared_ptr<Activity> newActivity);
+    //metodo necessario per la GUI
 
-    void printRegister(Date& date);
+    vector<Date> getRegisteredDates() const;
 
-    //metodi necessari per la GUI
+    //funzioni di aggiunta, modifica, cancellazione e ricerca
 
-    vector<Date> getRegisteredDates();
+    vector<shared_ptr<Activity>>& searchActivityByDate(const Date& date);
 
-    vector<shared_ptr<Activity>>& getActivities(const Date& date); //rinominare
+    void addActivity(const Date& date, shared_ptr<Activity> newActivity);
 
-    //aggiunta, modifica e cancellazione
+    void removeActivity(const Date& date, const shared_ptr<Activity>& remove);
+
+    void updateActivity(const Date& date, const shared_ptr<Activity>& oldActivity, const shared_ptr<Activity>& newActivity);
 
 private:
     map<Date, vector<shared_ptr<Activity>>> activities; //ogni chiave (Date) è associata a una o più attività

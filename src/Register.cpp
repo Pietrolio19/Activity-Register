@@ -1,15 +1,16 @@
 #include "Register.h"
 
-void Register::addActivity(Date &date, shared_ptr<Activity> newActivity) {
+void Register::addActivity(const Date &date, shared_ptr<Activity> newActivity) {
     activities[date].emplace_back(newActivity);
 }
 
 
-void Register::printRegister(Date &date) {
+void Register::printRegister(const Date &date) {
     auto it = activities.find(date);
     if (it != activities.end()) {
         for (auto a : it->second) {
-            a->printActivity();
+            string act = a->toString();
+            cout << act << endl;
         }
     }
     else {
@@ -17,7 +18,7 @@ void Register::printRegister(Date &date) {
     }
 }
 
-vector<shared_ptr<Activity>>& Register::getActivities(const Date& date) {
+vector<shared_ptr<Activity>>& Register::searchActivityByDate(const Date& date) {
     auto it = activities.find(date);
     vector<shared_ptr<Activity>> arr;
     if (it != activities.end()) {
@@ -28,7 +29,7 @@ vector<shared_ptr<Activity>>& Register::getActivities(const Date& date) {
     }
 }
 
-vector<Date> Register::getRegisteredDates() {
+vector<Date> Register::getRegisteredDates() const {
     vector<Date> arr;
     arr.reserve(activities.size());
     for (auto a : activities) {
@@ -36,6 +37,31 @@ vector<Date> Register::getRegisteredDates() {
     }
     return arr;
 }
+
+void Register::removeActivity(const Date &date, const shared_ptr<Activity>& removed) {
+    auto it = activities.find(date);
+    if (it == activities.end()) {return;}
+
+    auto& vec = it->second;
+    for (auto vit = vec.begin(); vit != vec.end();) {
+        if (*vit == removed) {
+            vit = vec.erase(vit);
+        }
+        else {
+            ++vit;
+        }
+    }
+    if (vec.empty()) {activities.erase(it);}
+}
+
+void Register::updateActivity(const Date &date, const shared_ptr<Activity> &oldActivity, const shared_ptr<Activity> &newActivity) {
+    auto it = activities.find(date);
+    if (it == activities.end()) {return;}
+
+    replace(it->second.begin(), it->second.end(), oldActivity, newActivity);
+}
+
+
 
 
 
