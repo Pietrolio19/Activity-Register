@@ -6,7 +6,7 @@ using namespace std;
 
 class Date {
 public:
-    Date(const int day, const int month, const int year) {
+    Date(int day, int month, int year) {
         this->day = day;
         this->month = month;
         this->year = year;

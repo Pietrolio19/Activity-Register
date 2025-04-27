@@ -5,7 +5,7 @@ using namespace std;
 
 class Time {
 public:
-    Time(int const hour, int const minute) {
+    Time(int hour, int minute) {
         this->minute = minute;
         this->hour = hour;
         if (!check()) {
