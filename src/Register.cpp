@@ -5,7 +5,7 @@ void Register::addActivity(const Date &date, shared_ptr<Activity> newActivity) {
 }
 
 
-void Register::printRegister(const Date &date) {
+void Register::printRegister(const Date &date) const {
     auto it = activities.find(date);
     if (it != activities.end()) {
         for (auto a : it->second) {

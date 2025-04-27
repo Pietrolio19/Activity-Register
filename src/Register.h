@@ -10,7 +10,7 @@ using namespace std;
 
 class Register {
 public:
-    void printRegister(const Date& date);
+    void printRegister(const Date& date) const;
 
     //metodo necessario per la GUI
 
@@ -18,13 +18,13 @@ public:
 
     //funzioni di aggiunta, modifica, cancellazione e ricerca
 
-    vector<shared_ptr<Activity>>& searchActivityByDate(const Date& date); //nome cambiato
+    vector<shared_ptr<Activity>>& searchActivityByDate(const Date& date);
 
     void addActivity(const Date& date, shared_ptr<Activity> newActivity);
 
-    void removeActivity(const Date& date, const shared_ptr<Activity>& remove); //aggiunta
+    void removeActivity(const Date& date, const shared_ptr<Activity>& remove);
 
-    void updateActivity(const Date& date, const shared_ptr<Activity>& oldActivity, const shared_ptr<Activity>& newActivity); //aggiunta
+    void updateActivity(const Date& date, const shared_ptr<Activity>& oldActivity, const shared_ptr<Activity>& newActivity);
 
 private:
     map<Date, vector<shared_ptr<Activity>>> activities; //ogni chiave (Date) è associata a una o più attività

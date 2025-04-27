@@ -5,23 +5,23 @@ using namespace std;
 
 class Time {
 public:
-    Time(int hour, int minute) {
+    Time(int const hour, int const minute) {
         this->minute = minute;
         this->hour = hour;
         if (!check()) {
-            throw std::invalid_argument("Invalid Time"); //cambiato
+            throw std::invalid_argument("Invalid Time");
         }
     }
 
     int getMinute() const {return minute;}
     int getHour() const {return hour;}
 
-    string toString() const; //nome cambiato
+    string toString() const;
 
 private:
     int minute;
     int hour;
-    [[nodiscard]] bool check() const; //funzione spostata
+    [[nodiscard]] bool check() const;
 };
 #endif //TIME_H
 

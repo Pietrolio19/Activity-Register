@@ -7,14 +7,14 @@ using namespace std;
 
 class Activity {
 public:
-    Activity(string desc, Time start, Time end) : start(start), end(end) {
+    Activity(const string& desc, const Time start, const Time end) : start(start), end(end) {
         this->desc = desc;
-        if (start > end) { //aggiunta
+        if (start > end) {
             throw invalid_argument("Invalid Starting Time");
         }
     }
 
-    string toString();
+    [[nodiscard]] string toString() const;
 
 private:
     string desc;

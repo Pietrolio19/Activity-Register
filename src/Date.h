@@ -6,12 +6,12 @@ using namespace std;
 
 class Date {
 public:
-    Date(int day, int month, int year) {
+    Date(const int day, const int month, const int year) {
         this->day = day;
         this->month = month;
         this->year = year;
         if (!check())
-            throw invalid_argument("Invalid Date"); //cambiato
+            throw invalid_argument("Invalid Date");
     }
 
     int getDay() const {return day;}

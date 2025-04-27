@@ -1,7 +1,7 @@
 #include "Register.h"
 #include "App.h"
 
-//wxIMPLEMENT_APP(App); usare questa riga per vedere la gui
+//wxIMPLEMENT_APP(App); //usare questa riga per vedere la gui
 
 /*int main() {
     try {
@@ -32,8 +32,8 @@
         reg.printRegister(date);
         cout << endl << endl;
 
-        cout << "Rimozione attività:" << desc1 << endl;
-        reg.removeActivity(date, sharedAct1);
+        cout << "Rimozione attività:" << newDesc << endl;
+        reg.removeActivity(date, newShared);
         reg.printRegister(date);
         cout << endl << endl;
 
